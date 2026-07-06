@@ -20,11 +20,20 @@ This project analyzes the Netflix Movies and TV Shows dataset using Python. The 
 ```
 Netflix-Data-Analysis
 │
+├── dataset
+│   ├── README.md
+│   └── netflix_titles.csv
+│
+├── images
+│   ├── country.png
+│   ├── movie_tv.png
+│   ├── genres.png
+│   ├── ratings.png
+│   └── yearly_addition.png
+│
 ├── Netflix_Data_Analysis.py
-├── requirements.txt
 ├── README.md
-├── netflix_titles.csv
-└── images/
+└── requirements.txt
 ```
 
 ## ▶️ How to Run
