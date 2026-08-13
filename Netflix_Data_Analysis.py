@@ -7,11 +7,6 @@ os.makedirs("images", exist_ok=True)
 
 # Load dataset
 df = pd.read_csv("dataset/netflix_titles.csv")
-
-# -------------------------------
-# Data Cleaning
-# -------------------------------
-
 df["country"] = df["country"].fillna("Unknown")
 df["rating"] = df["rating"].fillna("Not Rated")
 
@@ -23,12 +18,8 @@ print(df.head())
 
 print("\nDataset Info:")
 print(df.info())
-
-# -------------------------------
 # Question 1
 # Which country produces the most content?
-# -------------------------------
-
 country = (
     df["country"]
     .str.split(",")
@@ -50,12 +41,8 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig("images/country.png")
 plt.show()
-
-# -------------------------------
 # Question 2
 # Movie vs TV Show Distribution
-# -------------------------------
-
 type_count = df["type"].value_counts()
 
 print("\nMovie vs TV Show:")
@@ -67,12 +54,8 @@ plt.ylabel("")
 plt.title("Movie vs TV Show Distribution")
 plt.savefig("images/movie_tv.png")
 plt.show()
-
-# -------------------------------
 # Question 3
 # Most Common Genres
-# -------------------------------
-
 genres = (
     df["listed_in"]
     .str.split(",")
@@ -91,12 +74,8 @@ plt.title("Top 10 Genres")
 plt.tight_layout()
 plt.savefig("images/genres.png")
 plt.show()
-
-# -------------------------------
 # Question 4
 # Content Added Over Years
-# -------------------------------
-
 yearly = df["year_added"].value_counts().sort_index()
 
 print("\nContent Added Over Years:")
@@ -111,12 +90,8 @@ plt.grid(True)
 plt.tight_layout()
 plt.savefig("images/yearly_addition.png")
 plt.show()
-
-# -------------------------------
 # Question 5
 # Ratings Distribution
-# -------------------------------
-
 rating_count = df["rating"].value_counts()
 
 print("\nRatings Distribution:")
